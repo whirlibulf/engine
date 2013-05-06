@@ -1,9 +1,9 @@
 {
   "name": "engine",
   "repo": "whirlibulf/engine",
-  "description": "",
+  "description": "Javascript game engine with entity-component-system design",
   "version": "0.0.1",
-  "keywords": [],
+  "keywords": ["whirlibulf", "game engine", "html5"],
   "dependencies": {
     "component/raf": "*",
     "component/emitter": "*"
