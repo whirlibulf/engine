@@ -31,16 +31,16 @@ game.start(30);
 
 //low level:
 var obj = game.manager.createObject('object id');
-game.manager.addComponentToObject('Transform', 'transform', {'x': 0, 'y': 0});
-game.manager.addComponentToObject('Sprite', 'primitive-shape', {'shape': 'circle', 'radius': 5});
-game.manager.addComponentToObject('ClickScript', 'script', scriptRef);
+game.manager.addComponentToObject(obj, 'Transform', 'transform', {'x': 0, 'y': 0});
+game.manager.addComponentToObject(obj, 'Sprite', 'primitive-shape', {'shape': 'circle', 'radius': 5});
+game.manager.addComponentToObject(obj, 'ClickHandler', 'script', scriptRef);
 
 
 
 //data-driven:
 var prefab = {
-  'Position': {
-    'component': 'position',
+  'Transform': {
+    'component': 'transform',
     'options': {
       'x': 0,
       'y': 0
@@ -50,10 +50,11 @@ var prefab = {
     'component': 'primitive-shape',
     'options': {
       'shape': 'circle',
-      'radius': 5
+      'radius': 5,
+      'layer': 0
     }
   },
-  'ClickScript': {
+  'ClickHandler': {
     'component': 'script',
     'options': {
       'script': scriptRef
