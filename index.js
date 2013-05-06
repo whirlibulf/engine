@@ -1,3 +1,4 @@
-module.exports = function () {
-  return "Test";
+module.exports = {
+  "EventEmitter": require("./lib/eventemitter.js"),
+  "Game": require("./lib/game.js")
 };

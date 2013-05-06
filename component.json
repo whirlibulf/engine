@@ -4,11 +4,16 @@
   "description": "",
   "version": "0.0.1",
   "keywords": [],
-  "dependencies": {},
+  "dependencies": {
+    "component/raf": "*"
+  },
   "development": {},
   "license": "MIT",
   "main": "index.js",
   "scripts": [
-    "index.js"
+    "index.js",
+    "lib/game.js",
+    "lib/eventemitter.js",
+    "lib/loop.js"
   ]
 }
