@@ -5,7 +5,8 @@
   "version": "0.0.1",
   "keywords": [],
   "dependencies": {
-    "component/raf": "*"
+    "component/raf": "*",
+    "component/emitter": "*"
   },
   "development": {},
   "license": "MIT",
