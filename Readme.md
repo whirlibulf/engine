@@ -16,7 +16,7 @@ First, create a new project with component:
 
     $ component create
 
-Once component has created a new project folder do you, install the engine:
+Once component has created a new project folder for you, install the engine:
 
     $ component install whirlibulf/engine
 
