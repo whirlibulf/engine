@@ -5,11 +5,10 @@
 * [Node.js](http://nodejs.org)
 * [Component](https://github.com/component/component)
 
+
 ## Installation
 
     $ component install whirlibulf/engine
-
-## API
 
 
 ## Getting Started
