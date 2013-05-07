@@ -69,7 +69,7 @@ Example:
     };
 
 
-## Component Factories and Components
+## Component Factories and Component Instances
 
 Component factories create new component instances when they are needed by an object.
 
@@ -78,6 +78,8 @@ They should also have a `createComponent` function, which returns a component in
 
 Component instances are usually pure data - object literals.
 However, they can also implement functions if necessary.
+
+Components are unique within an object - objects may not have more than one of the same type of component.
 
 ## License
 
