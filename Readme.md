@@ -1,7 +1,9 @@
+# whirlibulf
 
-# engine
+## Requirements
 
-  
+* [Node.js](http://nodejs.org)
+* [Component](https://github.com/component/component)
 
 ## Installation
 
@@ -25,61 +27,33 @@ may need for your game.
 
 For example:
 
+    $ component install whirlibulf/transform-component
+    $ component install whirlibulf/canvas-system
+    $ component install whirlibulf/primitive-shapes-component
     $ component install whirlibulf/script-system
 
 
-## Design
+## Introduction
 
-Game objects are simply collections of related components.
+Whirlibulf is a Javascript game engine.
 
-Components are primarily just data, containing the state of the object it belongs
-to.
+On its own, it provides only very basic functionality, and is not very useful for developing a game.
 
-Systems contain most of the game logic, reading in component data and doing
-something with them.
+The engine depends on external packages called **Systems** and **Components** to provide the tools to develop a game.
 
-Some reading material with much better explanations:
+Here's some reading material if you haven't encountered the entity-component-system design before:
 
 * http://t-machine.org/index.php/2007/11/11/entity-systems-are-the-future-of-mmog-development-part-2/
 * http://gamedev.stackexchange.com/questions/31473/role-of-systems-in-entity-systems-architecture/31491#31491
 
 
-## Systems
+## Wiki
 
-Systems can implement an `update` function or a `render` function.
+See the [wiki](https://github.com/whirlibulf/engine/wiki) for more information about the engine.
 
-Systems can also extend `component/emitter` and listen for the `register` event
-to know when it has been added to the game.
+* [Creating a System](https://github.com/whirlibulf/engine/wiki/Creating-a-System)
+* [Creating a Component](https://github.com/whirlibulf/engine/wiki/Creating-a-Component)
 
-Example:
-
-    function System() {
-      var that = this;
-
-      this.on('register', function (engine) {
-        console.log('System loaded');
-        that.engine = engine;
-      });
-    }
-
-    Emitter(System.prototype);
-
-    System.prototype.update = function (dt) {
-      //Do stuff here
-    };
-
-
-## Component Factories and Component Instances
-
-Component factories create new component instances when they are needed by an object.
-
-Component factories should have an 'id' property to identify the type of component.
-They should also have a `createComponent` function, which returns a component instance.
-
-Component instances are usually pure data - object literals.
-However, they can also implement functions if necessary.
-
-Components are unique within an object - objects may not have more than one of the same type of component.
 
 ## License
 
