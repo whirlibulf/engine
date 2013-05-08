@@ -8,15 +8,15 @@ describe("Game", function () {
     game = new Game();
 
     //mock system
-    system = jasmine.createSpyObj('system', ['emit']);
+    system = jasmine.createSpyObj('system', ['init']);
 
     //mock component
     component = {
       id: 'test',
-      emit: function () {},
+      init: function () {},
       createComponent: function () { return {'test': true}; }
     };
-    spyOn(component, 'emit');
+    spyOn(component, 'init');
     spyOn(component, 'createComponent').andCallThrough();
   });
 
@@ -41,7 +41,7 @@ describe("Game", function () {
     it("should send a 'register' event to the system", function () {
       game.addSystem(system);
 
-      expect(system.emit).toHaveBeenCalled();
+      expect(system.init).toHaveBeenCalled();
     });
   });
 
@@ -70,7 +70,7 @@ describe("Game", function () {
     it("should send a 'register' event to the component factory", function () {
       game.addComponent(component);
 
-      expect(component.emit).toHaveBeenCalled();
+      expect(component.init).toHaveBeenCalled();
     });
 
     it("should reject components without an ID", function () {
