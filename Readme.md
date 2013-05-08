@@ -2,8 +2,8 @@
 
 ## Requirements
 
-* [Node.js](http://nodejs.org)
-* [Component](https://github.com/component/component)
+* [Node.js](http://nodejs.org) (Required by component)
+* [Component](https://github.com/component/component) (Required for installing packages and building)
 
 
 ## Installation
