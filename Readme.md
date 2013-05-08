@@ -51,9 +51,103 @@ Here's some reading material if you haven't encountered the entity-component-sys
 
 See the [wiki](https://github.com/whirlibulf/engine/wiki) for more information about the engine.
 
+* [Instantiating Objects](https://github.com/whirlibulf/engine/wiki/Instantiating-Objects)
 * [Creating a System](https://github.com/whirlibulf/engine/wiki/Creating-a-System)
 * [Creating a Component](https://github.com/whirlibulf/engine/wiki/Creating-a-Component)
 
+
+## API
+
+### addSystem(system)
+
+Add an instance of a system to the game.
+
+Example:
+
+    var scriptSystem = require('script-system');
+    game.addSystem(new scriptSystem());
+
+Returns `true` if added, and `false` if there was a problem adding the system.
+
+### addComponent(component)
+
+Add an instance of a component factory to the game.
+
+Example:
+
+    var positionComponent = require('position-component');
+    game.addComponent(new positionComponent());
+
+Returns `true` if added, and `false` if there was a problem adding the component.
+
+### createObject(id, [template])
+
+Create a new game object with the specified ID string.
+
+If template is supplied, components will be created with the object and added automatically.
+
+See [Instantiating Objects](https://github.com/whirlibulf/engine/wiki/Instantiating-Objects) for more information.
+
+Example:
+
+    game.createObject('object id', {'position': {'x': 0, 'y': 0}});
+
+Returns `true` if the object was created, otherwise returns `false` if there was an error.
+
+### getObject(id)
+
+Get an object instance by its ID string.
+
+This function should not normally be needed, it is provided for debugging purposes.
+
+Example:
+
+    game.createObject('object id');
+    //...
+    var obj = game.getObject('object id');
+
+Returns the object instance if it was found, otherwise returns `undefined`.
+
+### removeObject(id)
+
+Removes an object and its components from the game entirely.
+
+Example:
+
+    game.createObject('object id');
+    game.removeObject('object id');
+    game.getObject('object id'); //returns undefined
+
+### addComponentToObject(objectID, componentType, options)
+
+Add a new component of type `componentType` to an existing object with ID `objectID`.
+
+Example:
+
+    game.createObject('object id');
+    game.addComponentToObject('object id', 'position', {'x': 0, 'y': 0});
+
+Returns `true` if the component was added, otherwise returns `false` if there was an error;
+
+### getComponentInstances(componentType)
+
+Get all component instances of the specified type.
+
+Example:
+
+    game.getComponentInstances('position');
+
+Returns an array of component instances, or an empty array if none exist.
+
+### getComponentInstance(componentType, componentID)
+
+Get a particular component instance of type `componentType` with ID `componentID`.
+
+Example:
+
+    game.getComponentInstance('position', 12);
+
+Returns the component instance, or `undefined` if it is not found.
 
 ## License
 
