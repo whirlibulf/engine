@@ -26,10 +26,11 @@ may need for your game.
 
 For example:
 
-    $ component install whirlibulf/transform-component
-    $ component install whirlibulf/canvas-system
+    $ component install whirlibulf/2d-canvas-system
+    $ component install whirlibulf/position-component
     $ component install whirlibulf/primitive-shapes-component
     $ component install whirlibulf/script-system
+    $ component install whirlibulf/script-component
 
 
 ## Introduction
