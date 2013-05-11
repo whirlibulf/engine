@@ -51,6 +51,7 @@ Here's some reading material if you haven't encountered the entity-component-sys
 
 See the [wiki](https://github.com/whirlibulf/engine/wiki) for more information about the engine.
 
+* [Systems and Components](https://github.com/whirlibulf/engine/wiki/Systems-and-Components)
 * [Instantiating Objects](https://github.com/whirlibulf/engine/wiki/Instantiating-Objects)
 * [Creating a System](https://github.com/whirlibulf/engine/wiki/Creating-a-System)
 * [Creating a Component](https://github.com/whirlibulf/engine/wiki/Creating-a-Component)
