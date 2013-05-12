@@ -140,15 +140,24 @@ Example:
 
 Returns an array of component instances, or an empty array if none exist.
 
-### getComponentInstance(componentType, componentID)
+### getComponentInstance(objectID, componentType)
 
-Get a particular component instance of type `componentType` with ID `componentID`.
+Get a particular component instance belonging to an object with ID `objectID`.
 
 Example:
 
-    game.getComponentInstance('position', 12);
+    game.getComponentInstance(12, 'position');
 
 Returns the component instance, or `undefined` if it is not found.
+
+### getObjectsWithComponent(componentType)
+
+Get all objects that have a particular type of component.
+
+Example:
+
+    game.getObjectsWithComponent('renderable');
+
 
 ## Events
 
