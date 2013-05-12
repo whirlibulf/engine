@@ -1,23 +1,22 @@
 describe("Game", function () {
   var Game = require("engine/lib/game"),
     game,
+    mock,
     system,
     component;
 
   beforeEach(function () {
     game = new Game();
+    mock = {};
 
     //mock system
-    system = jasmine.createSpyObj('system', ['init']);
+    mock.system = jasmine.createSpyObj('system', ['init']);
 
     //mock component
-    component = {
-      id: 'test',
-      init: function () {},
-      createComponent: function () { return {'test': true}; }
+    mock.component = function () {
+      return {};
     };
-    spyOn(component, 'init');
-    spyOn(component, 'createComponent').andCallThrough();
+    spyOn(mock, 'component').andCallThrough();
   });
 
   it("should initialise all the core functions of whirlibulf", function () {
@@ -39,16 +38,16 @@ describe("Game", function () {
     });
 
     it("should send a 'register' event to the system", function () {
-      game.addSystem(system);
+      game.addSystem(mock.system);
 
-      expect(system.init).toHaveBeenCalled();
+      expect(mock.system.init).toHaveBeenCalled();
     });
   });
 
   describe("addComponent", function () {
     it("should add a component factory to the game", function () {
       var result;
-      result = game.addComponent({'id': 'test'});
+      result = game.addComponent('test', function () {});
 
       expect(game._components.test).toBeDefined();
       expect(result).toBe(true);
@@ -56,27 +55,30 @@ describe("Game", function () {
 
     it("should not add duplicate component types", function () {
       var result;
-      result = game.addComponent({'id': 'test'});
+      result = game.addComponent('test', function () {});
 
       expect(game._components.test).toBeDefined();
       expect(result).toBe(true);
 
-      result = game.addComponent({'id': 'test'});
+      result = game.addComponent('test', function () {});
 
       expect(game._components.test).toBeDefined();
       expect(result).toBe(false);
     });
 
-    it("should send a 'register' event to the component factory", function () {
-      game.addComponent(component);
-
-      expect(component.init).toHaveBeenCalled();
-    });
-
     it("should reject components without an ID", function () {
       var result;
-      result = game.addComponent({});
 
+      result = game.addComponent(function () {});
+      expect(result).toBe(false);
+
+      result = game.addComponent();
+      expect(result).toBe(false);
+
+      result = game.addComponent(undefined, function () {});
+      expect(result).toBe(false);
+
+      result = game.addComponent('', function () {});
       expect(result).toBe(false);
     });
   });
@@ -145,7 +147,7 @@ describe("Game", function () {
 
     it("should return the component instance's index after it is created", function () {
       var result;
-      game.addComponent(component);
+      game.addComponent('test', mock.component);
       result = game.createComponent('test');
 
       expect(result).toBe(0);
@@ -170,7 +172,7 @@ describe("Game", function () {
     });
 
     it("should add a new component instance to the object", function () {
-      game.addComponent(component);
+      game.addComponent('test', mock.component);
       game.createObject('test');
 
       result = game.addComponentToObject('test', 'test', {});

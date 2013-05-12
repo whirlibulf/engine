@@ -70,14 +70,14 @@ Example:
 
 Returns `true` if added, and `false` if there was a problem adding the system.
 
-### addComponent(component)
+### addComponent(id, component)
 
 Add an instance of a component factory to the game.
 
 Example:
 
     var positionComponent = require('position-component');
-    game.addComponent(new positionComponent());
+    game.addComponent('position', positionComponent);
 
 Returns `true` if added, and `false` if there was a problem adding the component.
 
