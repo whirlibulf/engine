@@ -150,6 +150,32 @@ Example:
 
 Returns the component instance, or `undefined` if it is not found.
 
+## Events
+
+The game engine emits the following events:
+
+### componentCreated
+
+Emitted when a new component instance is created.
+
+The new component instance is sent with the event.
+
+### updateBegin
+
+Emitted when the update tick begins.
+
+### updateEnd
+
+Emitted when all systems have finished updating.
+
+### renderBegin
+
+Emitted when the render tick begins.
+
+### renderEnd
+
+Emitted when all systems have finished rendering.
+
 ## License
 
   MIT
