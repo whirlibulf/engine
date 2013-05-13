@@ -27,11 +27,11 @@ Here's some reading material if you haven't encountered the Entity-Component-Sys
 
 ## Getting Started
 
-First, create a new project with component:
+First, create a new project with `component`, the client package manager (see requirements above for a link):
 
     $ component create --local
 
-Once component has created a new project folder for you, install the engine:
+Once component has created a new project for you, install the engine:
 
     $ component install whirlibulf/engine
 
