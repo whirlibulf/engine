@@ -97,12 +97,12 @@ See the [wiki](https://github.com/whirlibulf/engine/wiki) for more information a
 * [Creating a Component](https://github.com/whirlibulf/engine/wiki/Creating-a-Component)
 
 
-## Component the tool, and game components
+## Component (the tool), and Component (the whirlibulf thing)
 
 The word `component` may be a bit confusing, since it is being used in two different
 contexts here.
 
-Component the tool, is a client-side package manager.
+Component (the tool) is a client-side package manager.
 It is used to install the engine and any other client-side packages, not necessarily
 for whirlibulf.
 It is similar to `npm` for node.js, `gem` for ruby, and `composer` for php.
