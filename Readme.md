@@ -11,28 +11,6 @@
     $ component install whirlibulf/engine
 
 
-## Getting Started
-
-First, create a new project with component:
-
-    $ component create
-
-Once component has created a new project folder for you, install the engine:
-
-    $ component install whirlibulf/engine
-
-Once the engine is installed, you can install systems and components that you
-may need for your game.
-
-For example:
-
-    $ component install whirlibulf/2d-canvas-system
-    $ component install whirlibulf/position-component
-    $ component install whirlibulf/primitive-shapes-component
-    $ component install whirlibulf/script-system
-    $ component install whirlibulf/script-component
-
-
 ## Introduction
 
 Whirlibulf is a Javascript game engine.
@@ -46,6 +24,66 @@ Here's some reading material if you haven't encountered the entity-component-sys
 * http://t-machine.org/index.php/2007/11/11/entity-systems-are-the-future-of-mmog-development-part-2/
 * http://gamedev.stackexchange.com/questions/31473/role-of-systems-in-entity-systems-architecture/31491#31491
 
+
+## Getting Started
+
+First, create a new project with component:
+
+    $ component create --local
+
+Once component has created a new project folder for you, install the engine:
+
+    $ component install whirlibulf/engine
+
+Once the engine is installed, you can install systems and components that you
+may need for your game.
+
+For example:
+
+    $ component install whirlibulf/2d-canvas-system
+    $ component install whirlibulf/renderable-component
+    $ component install whirlibulf/position-component
+    $ component install whirlibulf/size-component
+
+Once the systems and components are installed, just add them to the game and create your objects!
+
+    var engine = require("engine");
+    var Canvas = require("2d-canvas-system");
+
+    //Create new game instance
+    var game = new engine.Game();
+
+    //Add the rendering system
+    game.addSystem(new Canvas({
+      element: document.getElementById('gameCanvas'),
+      width: 800,
+      height: 600
+    });
+
+    //Add supporting components
+    game.addComponent('renderable', require('renderable-component');
+    game.addComponent('position', require('position-component');
+    game.addComponent('size', require('size-component');
+
+    //Create a square in the middle of the screen
+    game.createObject('square', {
+      renderable: {
+        type: 'rectangle',
+        visible: true,
+        zIndex: 0
+      },
+      size: {
+        width: 100,
+        height: 100
+      },
+      position: {
+        x: 400,
+        y: 300
+      }
+    });
+
+    //Start the game
+    game.start();
 
 ## Wiki
 
