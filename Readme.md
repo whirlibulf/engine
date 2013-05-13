@@ -13,13 +13,13 @@
 
 ## Introduction
 
-Whirlibulf is a Javascript game engine.
+Whirlibulf is an **Entity-Component-System** Javascript game engine.
 
 On its own, it provides only very basic functionality, and is not very useful for developing a game.
 
 The engine depends on external packages called **Systems** and **Components** to provide the tools to develop a game.
 
-Here's some reading material if you haven't encountered the entity-component-system design before:
+Here's some reading material if you haven't encountered the Entity-Component-System design before:
 
 * http://t-machine.org/index.php/2007/11/11/entity-systems-are-the-future-of-mmog-development-part-2/
 * http://gamedev.stackexchange.com/questions/31473/role-of-systems-in-entity-systems-architecture/31491#31491
