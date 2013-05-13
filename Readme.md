@@ -85,143 +85,33 @@ Once the systems and components are installed, just add them to the game and cre
     //Start the game
     game.start();
 
+
 ## Wiki
 
 See the [wiki](https://github.com/whirlibulf/engine/wiki) for more information about the engine.
 
+* [API](https://github.com/whirlibulf/engine/wiki/API)
 * [Systems and Components](https://github.com/whirlibulf/engine/wiki/Systems-and-Components)
 * [Instantiating Objects](https://github.com/whirlibulf/engine/wiki/Instantiating-Objects)
 * [Creating a System](https://github.com/whirlibulf/engine/wiki/Creating-a-System)
 * [Creating a Component](https://github.com/whirlibulf/engine/wiki/Creating-a-Component)
 
 
-## API
+## Component the tool, and game components
 
-### addSystem(system)
+The word `component` may be a bit confusing, since it is being used in two different
+contexts here.
 
-Add an instance of a system to the game.
+Component the tool, is a client-side package manager.
+It is used to install the engine and any other client-side packages, not necessarily
+for whirlibulf.
+It is similar to `npm` for node.js, `gem` for ruby, and `composer` for php.
 
-Example:
+Whirlibulf game components are something else entirely.
+Components for the game engine are data structures used by game objects to store
+data that may be used by systems.
+These whirlibulf components (as well as systems) are published via component the tool.
 
-    var scriptSystem = require('script-system');
-    game.addSystem(new scriptSystem());
-
-Returns `true` if added, and `false` if there was a problem adding the system.
-
-### addComponent(id, component)
-
-Add an instance of a component factory to the game.
-
-Example:
-
-    var positionComponent = require('position-component');
-    game.addComponent('position', positionComponent);
-
-Returns `true` if added, and `false` if there was a problem adding the component.
-
-### createObject(id, [template])
-
-Create a new game object with the specified ID string.
-
-If template is supplied, components will be created with the object and added automatically.
-
-See [Instantiating Objects](https://github.com/whirlibulf/engine/wiki/Instantiating-Objects) for more information.
-
-Example:
-
-    game.createObject('object id', {'position': {'x': 0, 'y': 0}});
-
-Returns `true` if the object was created, otherwise returns `false` if there was an error.
-
-### getObject(id)
-
-Get an object instance by its ID string.
-
-This function should not normally be needed, it is provided for debugging purposes.
-
-Example:
-
-    game.createObject('object id');
-    //...
-    var obj = game.getObject('object id');
-
-Returns the object instance if it was found, otherwise returns `undefined`.
-
-### removeObject(id)
-
-Removes an object and its components from the game entirely.
-
-Example:
-
-    game.createObject('object id');
-    game.removeObject('object id');
-    game.getObject('object id'); //returns undefined
-
-### addComponentToObject(objectID, componentType, options)
-
-Add a new component of type `componentType` to an existing object with ID `objectID`.
-
-Example:
-
-    game.createObject('object id');
-    game.addComponentToObject('object id', 'position', {'x': 0, 'y': 0});
-
-Returns `true` if the component was added, otherwise returns `false` if there was an error;
-
-### getComponentInstances(componentType)
-
-Get all component instances of the specified type.
-
-Example:
-
-    game.getComponentInstances('position');
-
-Returns an array of component instances, or an empty array if none exist.
-
-### getComponentInstance(objectID, componentType)
-
-Get a particular component instance belonging to an object with ID `objectID`.
-
-Example:
-
-    game.getComponentInstance(12, 'position');
-
-Returns the component instance, or `undefined` if it is not found.
-
-### getObjectsWithComponent(componentType)
-
-Get all objects that have a particular type of component.
-
-Example:
-
-    game.getObjectsWithComponent('renderable');
-
-
-## Events
-
-The game engine emits the following events:
-
-### componentCreated
-
-Emitted when a new component instance is created.
-
-The new component instance is sent with the event.
-
-### updateBegin
-
-Emitted when the update tick begins.
-
-### updateEnd
-
-Emitted when all systems have finished updating.
-
-### renderBegin
-
-Emitted when the render tick begins.
-
-### renderEnd
-
-Emitted when all systems have finished rendering.
 
 ## License
 
