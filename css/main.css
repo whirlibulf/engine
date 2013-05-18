@@ -8,6 +8,12 @@ h1 {
   font-size: 300%;
 }
 
+h2 {
+  margin-top: 30px;
+  font-size: 200%;
+  color: #8CCFB7;
+}
+
 #header {
   position: relative;
   margin-top: 40px;
@@ -18,19 +24,50 @@ a, a:hover, a:visited {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 #nav {
   margin-top: 20px;
 }
 
 #nav a {
   color: #F3E282;
-  text-decoration: none;
-}
-
-#nav a:hover {
-  color: #8CCFB7;
 }
 
 #content {
   margin-top: 20px;
+}
+
+#content a {
+  color: #F3E282;
+}
+
+strong {
+  color: #EE5856;
+  font-weight: bold;
+}
+
+p {
+  padding-top: 20px;
+  padding-left: 40px;
+}
+
+.shell {
+  padding-top: 20px;
+  padding-left: 40px;
+  font-family: "Monaco", "Courier New", monospace;
+}
+
+.shell .path {
+  color: #8CCFB7;
+}
+
+.shell .prompt {
+  color: #EE5856;
+}
+
+.shell .command {
+  color: #BDD96A;
 }
