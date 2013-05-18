@@ -64,17 +64,18 @@ These can also be installed into the project folder in the same way, for example
   <span class="command">component install whirlibulf/size-component</span>
 </span>
 
-These are the minimum required systems and components to draw a simple shape on a canvas.
+These are the minimum required systems and components to draw a simple shape on
+a canvas.
 
-Because of the way whirlibulf works, you could use your own rendering system, or
-swap it out for a third-party compatible rendering system without changing any
+Because of the way whirlibulf works, you could swap to your own rendering system
+at any time, or a third-party compatible rendering system, without changing any
 of your entities or components.
 
 You could potentially swap from an HTML5 canvas renderer to a DOM renderer, to a
-WebGL renderer, to a SVG renderer with minimal effort.
+WebGL renderer, to a SVG renderer and back again with minimal effort.
 
 The same applies to all kinds of systems. You could swap out physics, pathfinding,
-controls, etc.
+controls, etc. with minimal or even no changes to existing code.
 
 ## Initial Code
 
