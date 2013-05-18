@@ -3,30 +3,40 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
         <title>{{ page.title }}</title>
         <meta name="viewport" content="width=device-width">
-        <!-- syntax highlighting CSS -->
+        <link href='http://fonts.googleapis.com/css?family=Merriweather+Sans' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{{ site.url }}/css/syntax.css">
-        <!-- Custom CSS -->
+        <link rel="stylesheet" href="{{ site.url }}/css/reset.css">
+        <link rel="stylesheet" href="{{ site.url }}/css/unsemantic.css">
         <link rel="stylesheet" href="{{ site.url }}/css/main.css">
     </head>
     <body>
-        <div class="container">
-          <div class="site">
-            <div class="header">
-              <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-              <a class="extra" href="/">home</a>
-              <a class="extra" href="https://github.com/whirlibulf">github</a>
+        <div class="grid-container" id="header">
+            <div class="grid-50">
+              <h1>
+                <a href="{{ site.url }}/">whirlibulf</a>
+              </h1>
             </div>
-            {{ content }}
-            <div class="footer">
-              <div class="contact">
-                <p>
-                  <a href="http://github.com/whirlibulf/">github.com/whirlibulf</a><br />
-                </p>
-              </div>
+        </div>
+
+        <div class="grid-container" id="nav">
+            <div class="grid-20">
+                <a href="{{ site.url }}/docs/getting-started">Getting Started</a>
             </div>
-          </div>
+            <div class="grid-20">
+                <a href="{{ site.url }}/docs">Documentation</a>
+            </div>
+            <div class="grid-20">
+                <a href="https://github.com/whirlibulf/engine">Github</a>
+            </div>
+        </div>
+
+        <div class="grid-container" id="content">
+            <div class="grid-100">
+              {{ content }}
+            </div>
         </div>
     </body>
 </html>
