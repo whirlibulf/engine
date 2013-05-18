@@ -166,3 +166,13 @@ The build process also includes your game code.
 
 **Important**: All your own files to be included in the build process need to
 be listed in the `component.json` file.
+
+
+## The HTML file
+
+To run the example code, an HTML file is needed to do two things:
+
+1. Include the `build/build.js` file which includes all the game, engine and
+third-party code.
+
+2. Create a canvas element on the screen which will be used by the rendering system.
