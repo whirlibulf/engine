@@ -31,16 +31,12 @@ a:hover {
   margin-top: 20px;
 }
 
-#nav a {
+#nav a, #footer a, #content a {
   color: #F3E282;
 }
 
 #content {
   margin-top: 20px;
-}
-
-#content a {
-  color: #F3E282;
 }
 
 strong {
@@ -87,4 +83,13 @@ code {
 
 p code {
   color: #EE5856;
+}
+
+#footer {
+  margin-top: 50px;
+  text-align: center;
+}
+
+ul {
+  margin-top: 10px;
 }
