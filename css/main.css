@@ -60,15 +60,15 @@ p {
 }
 
 .shell .path {
-  color: #8CCFB7;
+  color: #66D9EF;
 }
 
 .shell .prompt {
-  color: #EE5856;
+  color: #F92672;
 }
 
 .shell .command {
-  color: #BDD96A;
+  color: #A6E22E;
 }
 
 .highlighttable {
