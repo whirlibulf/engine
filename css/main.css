@@ -50,12 +50,11 @@ strong {
 
 p {
   padding-top: 20px;
-  padding-left: 40px;
 }
 
 .shell {
   padding-top: 20px;
-  padding-left: 40px;
+  padding-left: 30px;
   font-family: "Droid Sans Mono", "Monaco", "Courier New", monospace;
 }
 
@@ -73,11 +72,19 @@ p {
 
 .highlighttable {
   margin-top: 20px;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .highlight {
-  margin-left: 10px;
+  margin-left: 20px;
   padding: 10px;
   font-family: "Droid Sans Mono", "Monaco", "Courier New", monospace;
+}
+
+code {
+  font-family: "Droid Sans Mono", "Monaco", "Courier New", monospace;
+}
+
+p code {
+  color: #EE5856;
 }
