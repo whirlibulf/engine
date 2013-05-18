@@ -70,3 +70,14 @@ p {
 .shell .command {
   color: #BDD96A;
 }
+
+.highlighttable {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.highlight {
+  margin-left: 10px;
+  padding: 10px;
+  font-family: "Monaco", "Courier New", monospace;
+}
