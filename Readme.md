@@ -1,5 +1,7 @@
 # whirlibulf
 
+Website: http://whirlibulf.com
+
 ## Requirements
 
 * [Node.js](http://nodejs.org) (Required by component)
@@ -54,19 +56,19 @@ Once the systems and components are installed, just add them to the game and cre
     var game = new engine.Game();
 
     //Add the rendering system
-    game.addSystem(new Canvas({
+    game.use(new Canvas({
       element: document.getElementById('gameCanvas'),
       width: 800,
       height: 600
     });
 
     //Add supporting components
-    game.addComponent('renderable', require('renderable-component');
-    game.addComponent('position', require('position-component');
-    game.addComponent('size', require('size-component');
+    game.use('renderable', require('renderable-component');
+    game.use('position', require('position-component');
+    game.use('size', require('size-component');
 
     //Create a square in the middle of the screen
-    game.createObject('square', {
+    game.create('square', {
       renderable: {
         type: 'rectangle',
         visible: true,
