@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: whirlibulf
+title: Home
 ---
 
 Whirlibulf is an **Entity-Component-System** Javascript game engine.

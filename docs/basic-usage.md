@@ -31,6 +31,23 @@ When a new project has been set up, install the engine:
   <span class="command">component install whirlibulf/engine</span>
 </div>
 
+The engine API is very simple, and provides only these functions:
+
+{% highlight javascript %}
+game.use()    // Register systems and components
+game.create() // Create new entities
+game.add()    // Add components to entities
+game.get()    // Retrieve entities and component instances
+game.remove() // Delete an entity and all its components
+game.getAll() // Get all entities with a specific component
+{% endhighlight %}
+
+Of these functions, `get` and `getAll` are the only ones that return useful game data.
+
+This basic API can be used to build all the systems and components needed by games.
+
+See the complete [API documentation]({{ site.url }}/docs/api.html) for more details.
+
 ## Systems and Components
 
 On its own, whirlibulf is not very useful.
@@ -77,6 +94,7 @@ WebGL renderer, to a SVG renderer and back again with minimal effort.
 The same applies to all kinds of systems. You could swap out physics, pathfinding,
 controls, etc. with minimal or even no changes to existing code.
 
+<!--
 ## Initial Code
 
 Here is a basic example of using the systems and components above to draw some shapes:
@@ -147,6 +165,7 @@ repositories:
 * [position-component](https://github.com/whirlibulf/position-component)
 * [size-component](https://github.com/whirlibulf/size-component)
 
+-->
 
 ## Building
 

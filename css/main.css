@@ -5,17 +5,19 @@ body {
 }
 
 h1 {
-  font-size: 300%;
-}
-
-h2 {
-  margin-top: 30px;
+  margin-top: 40px;
   font-size: 200%;
   color: #8CCFB7;
 }
 
+h2 {
+  margin-top: 30px;
+  font-size: 180%;
+  color: #8CCFB7;
+}
+
 #header {
-  margin-top: 40px;
+  font-size: 150%;
 }
 
 a, a:hover, a:visited {
@@ -81,15 +83,20 @@ code {
   font-family: "Droid Sans Mono", "Monaco", "Courier New", monospace;
 }
 
-p code {
+p code, li code {
   color: #EE5856;
 }
 
 #footer {
   margin-top: 50px;
+  margin-bottom: 30px;
   text-align: center;
 }
 
-ul {
+#sidebar {
   margin-top: 10px;
+}
+
+ul {
+  margin-left: 10px;
 }
