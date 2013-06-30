@@ -194,7 +194,7 @@ describe("Game", function () {
   describe("config", function () {
       it("should add a value to the config dict", function () {
           game.config("test", true);
-          expect(game._config["test"]).toBe(true);
+          expect(game._config.test).toBe(true);
       });
 
       it("should return a value added to the config", function () {
