@@ -190,4 +190,26 @@ describe("Game", function () {
       expect(game._componentsByType.test.length).toBe(1);
     });
   });
+
+  describe("config", function () {
+      it("should add a value to the config dict", function () {
+          game.config("test", true);
+          expect(game._config["test"]).toBe(true);
+      });
+
+      it("should return a value added to the config", function () {
+          game.config("test", true);
+          expect(game.config("test")).toBe(true);
+
+          //It should remember the value
+          expect(game.config("test")).toBe(true);
+      });
+
+      it("should set a value to undefined if explicitly called with undefined value", function () {
+          game.config("test", true);
+          expect(game.config("test")).toBe(true);
+          game.config("test", undefined);
+          expect(game.config("test")).toBe(undefined);
+      });
+  });
 });
