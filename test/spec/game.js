@@ -211,5 +211,19 @@ describe("Game", function () {
           game.config("test", undefined);
           expect(game.config("test")).toBe(undefined);
       });
+
+      it("should accept config objects", function () {
+          game.config({
+              "test1": true,
+              "test2": false,
+              "test3": undefined,
+              "test4": "string"
+          });
+
+          expect(game.config("test1")).toBe(true);
+          expect(game.config("test2")).toBe(false);
+          expect(game.config("test3")).toBe(undefined);
+          expect(game.config("test4")).toBe("string");
+      });
   });
 });
