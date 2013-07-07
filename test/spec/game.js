@@ -30,14 +30,13 @@ describe("Game", function () {
   });
 
   describe("use", function () {
+    it("should require a parameter", function () {
+      expect(game.use()).toBe(false);
+    });
+
     it("should add a system object to the game", function () {
-      game.use({});
-
-      expect(game._systems.length).toEqual(1);
-
-      game.use({});
-
-      expect(game._systems.length).toEqual(2);
+      expect(game.use({})).toBe(true);
+      expect(game.use({})).toBe(true);
     });
 
     it("should send a 'register' event to the system", function () {
@@ -69,12 +68,6 @@ describe("Game", function () {
 
     it("should reject components without an ID", function () {
       var result;
-
-      result = game.use(function () {});
-      expect(result).toBe(false);
-
-      result = game.use();
-      expect(result).toBe(false);
 
       result = game.use(undefined, function () {});
       expect(result).toBe(false);
