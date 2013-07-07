@@ -1,11 +1,9 @@
 describe("EntityManager", function () {
     var EntityManager = require("engine/lib/managers/entity"),
-    entities;
+        entities;
 
     beforeEach(function () {
         entities = new EntityManager();
-
-        spyOn(entities, 'getAll').andCallThrough();
     });
 
     describe("create", function () {
