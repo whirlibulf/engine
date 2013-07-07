@@ -17,6 +17,7 @@
     "lib/loop.js",
     "lib/boot.js",
     "lib/managers/system.js",
-    "lib/managers/component.js"
+    "lib/managers/component.js",
+    "lib/managers/entity.js"
   ]
 }

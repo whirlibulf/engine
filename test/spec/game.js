@@ -87,20 +87,16 @@ describe("Game", function () {
       result = game.create('test');
 
       expect(result).toBe(true);
-      expect(game._objects.test).toBeDefined();
     });
 
     it("should not create duplicate objects with the same ID", function () {
       var result;
-      result = game.create('test');
 
+      result = game.create('test');
       expect(result).toBe(true);
-      expect(game._objects.test).toBeDefined();
 
       result = game.create('test');
-
       expect(result).toBe(false);
-      expect(game._objects.test).toBeDefined();
     });
   });
 
