@@ -49,7 +49,6 @@ describe("Game", function () {
       var result;
       result = game.use('test', function () {});
 
-      expect(game._components.test).toBeDefined();
       expect(result).toBe(true);
     });
 
@@ -57,12 +56,10 @@ describe("Game", function () {
       var result;
       result = game.use('test', function () {});
 
-      expect(game._components.test).toBeDefined();
       expect(result).toBe(true);
 
       result = game.use('test', function () {});
 
-      expect(game._components.test).toBeDefined();
       expect(result).toBe(false);
     });
 
@@ -163,24 +160,6 @@ describe("Game", function () {
       //make sure component exists
       result = game.get('test', 'test');
       expect(result).toBeDefined();
-    });
-  });
-
-  describe("_createComponent", function () {
-    it("should not do anything if the component does not exist", function () {
-      var result;
-      result = game._createComponent('test');
-
-      expect(result).toBe(false);
-    });
-
-    it("should return the component instance's index after it is created", function () {
-      var result;
-      game.use('test', mock.component);
-      result = game._createComponent('test');
-
-      expect(result).toBe(0);
-      expect(game._componentsByType.test.length).toBe(1);
     });
   });
 
