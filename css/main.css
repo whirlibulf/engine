@@ -63,6 +63,7 @@ p {
   padding-top: 20px;
   padding-left: 30px;
   font-family: "Droid Sans Mono", "Monaco", "Courier New", monospace;
+  font-size: 80%;
 }
 
 .shell .path {
@@ -90,6 +91,7 @@ p {
 
 code {
   font-family: "Droid Sans Mono", "Monaco", "Courier New", monospace;
+  font-size: 80%;
 }
 
 p code, li code {
