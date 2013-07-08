@@ -39,7 +39,8 @@ game.create() // Create new entities
 game.add()    // Add components to entities
 game.get()    // Retrieve entities and component instances
 game.remove() // Delete an entity and all its components
-game.getAll() // Get all entities with a specific component
+game.index()  // Index entities with a specific set of components
+game.getAll() // Get all entities in an index
 {% endhighlight %}
 
 Of these functions, `get` and `getAll` are the only ones that return useful game data.
