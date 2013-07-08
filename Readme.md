@@ -28,6 +28,18 @@ Here's some reading material if you haven't encountered the Entity-Component-Sys
 
 See the [whirlibulf website](http://whirlibulf.com) for documentation.
 
+## Features
+
+* Low-garbage
+* Lightweight (<500 lines of engine code)
+* Data-oriented
+* Component pooling
+* Entity indexing by component
+
+## Examples
+
+See a simple pong game implemented with whirlibulf: https://github.com/whirlibulf/pong
+
 ## License
 
   MIT
