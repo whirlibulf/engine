@@ -80,7 +80,7 @@ describe("EntityManager", function () {
         });
 
         it("should return an array of entity IDs in the index", function () {
-            var list;
+            var list, index;
 
             entities.create("test1");
             entities.create("test2");
@@ -91,10 +91,8 @@ describe("EntityManager", function () {
             entities.add("fizz", "3", "test3");
             entities.add("buzz", "3", "test3");
 
-            entities.index(["fizz"]);
-            entities.index(["fizz", "buzz"]);
-
-            list = entities.getAll("fizz");
+            index = entities.index(["fizz"]);
+            list = entities.getAll(index);
 
             expect(list).toEqual(jasmine.any(Array));
             expect(list).toContain("test1");
@@ -102,8 +100,10 @@ describe("EntityManager", function () {
             expect(list).toContain("test3");
             expect(list).not.toContain("test4");
 
-            list = entities.getAll("fizz,buzz");
+            index = entities.index(["fizz", "buzz"]);
+            list = entities.getAll(index);
 
+            console.log("start test");
             expect(list).toEqual(jasmine.any(Array));
             expect(list).not.toContain("test1");
             expect(list).not.toContain("test2");
