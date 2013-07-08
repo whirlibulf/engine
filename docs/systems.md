@@ -55,7 +55,7 @@ System.prototype.render = function () {
 };
 {% endhighlight %}
 
-### Working with entities and components
+## Working with entities and components
 
 Systems perform all the work of updating components.
 
@@ -80,7 +80,7 @@ System.prototype.update = function (dt) {
 
 In the above code, `entities` is now a list of entity IDs for entities that match the component requirements.
 
-### Example System
+## Example System
 
 Here is an example system for updating entity positions based on their velocity:
 
