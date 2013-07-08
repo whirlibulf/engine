@@ -30,11 +30,11 @@ See the [whirlibulf website](http://whirlibulf.com) for documentation.
 
 ## Features
 
-* Low-garbage
-* Lightweight (<500 lines of engine code)
-* Data-oriented
-* Component pooling
-* Entity indexing by component
+* Low-garbage - regularly tested for memory performance
+* Lightweight - less than 500 lines of engine code
+* Data-oriented - easy to edit and use
+* Pooled component instances - reuse components
+* Indexed entities - index entities according to their components
 
 ## Examples
 
