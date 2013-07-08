@@ -56,26 +56,58 @@ describe("EntityManager", function () {
         });
     });
 
+    describe("index", function () {
+        it("should return false if the parameter is invalid", function () {
+            expect(entities.index()).toBe(false);
+            expect(entities.index([])).toBe(false);
+        });
+
+        it("should return the index key after the index is created", function () {
+            expect(entities.index(["test"])).toBe("test");
+            expect(entities.index(["test1", "test2"])).toBe("test1,test2");
+        });
+    });
+
     describe("getAll", function () {
-        it("should return null if no components of that type have been added", function () {
+        it("should return null if the index was not created", function () {
             expect(entities.getAll("bla")).toBe(null);
         });
 
-        it("should return a array of entity IDs", function () {
+        it("should return an empty list if the index exists", function () {
+            entities.index(["bla"]);
+            expect(entities.getAll("bla")).toEqual(jasmine.any(Array));
+            expect(entities.getAll("bla").length).toBe(0);
+        });
+
+        it("should return an array of entity IDs in the index", function () {
+            var list;
+
             entities.create("test1");
             entities.create("test2");
             entities.create("test3");
             entities.create("test4");
             entities.add("fizz", "1", "test1");
             entities.add("fizz", "2", "test2");
+            entities.add("fizz", "3", "test3");
             entities.add("buzz", "3", "test3");
 
-            var list = entities.getAll("fizz");
+            entities.index(["fizz"]);
+            entities.index(["fizz", "buzz"]);
+
+            list = entities.getAll("fizz");
 
             expect(list).toEqual(jasmine.any(Array));
             expect(list).toContain("test1");
             expect(list).toContain("test2");
-            expect(list).not.toContain("test3");
+            expect(list).toContain("test3");
+            expect(list).not.toContain("test4");
+
+            list = entities.getAll("fizz,buzz");
+
+            expect(list).toEqual(jasmine.any(Array));
+            expect(list).not.toContain("test1");
+            expect(list).not.toContain("test2");
+            expect(list).toContain("test3");
             expect(list).not.toContain("test4");
         });
     });
