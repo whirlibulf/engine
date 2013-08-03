@@ -59,12 +59,11 @@ describe("EntityManager", function () {
     describe("index", function () {
         it("should return false if the parameter is invalid", function () {
             expect(entities.index()).toBe(false);
-            expect(entities.index([])).toBe(false);
         });
 
         it("should return the index key after the index is created", function () {
-            expect(entities.index(["test"])).toBe("test");
-            expect(entities.index(["test1", "test2"])).toBe("test1,test2");
+            expect(entities.index("test")).toBe("test");
+            expect(entities.index("test1", "test2")).toBe("test1,test2");
         });
     });
 
@@ -91,7 +90,7 @@ describe("EntityManager", function () {
             entities.add("fizz", "3", "test3");
             entities.add("buzz", "3", "test3");
 
-            index = entities.index(["fizz"]);
+            index = entities.index("fizz");
             list = entities.getAll(index);
 
             expect(list).toEqual(jasmine.any(Array));
@@ -100,7 +99,7 @@ describe("EntityManager", function () {
             expect(list).toContain("test3");
             expect(list).not.toContain("test4");
 
-            index = entities.index(["fizz", "buzz"]);
+            index = entities.index("fizz", "buzz");
             list = entities.getAll(index);
 
             console.log("start test");
