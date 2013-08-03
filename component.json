@@ -19,6 +19,7 @@
     "lib/managers/system.js",
     "lib/managers/component.js",
     "lib/managers/entity.js",
-    "lib/managers/componentpool.js"
+    "lib/managers/componentpool.js",
+    "lib/managers/entitypool.js"
   ]
 }
